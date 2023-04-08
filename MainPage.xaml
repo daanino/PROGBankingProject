@@ -24,14 +24,6 @@
                    TextColor="#005c99" 
                    HorizontalOptions="Center"/>
 
-                <Entry x:Name="FirstNameEntry" 
-                   Placeholder="First Name" 
-                   FontSize="Medium"/>
-
-                <Entry x:Name="LastNameEntry" 
-                   Placeholder="Last Name" 
-                   FontSize="Medium"/>
-
                 <Entry x:Name="UsernameEntry" 
                    Placeholder="Username" 
                    FontSize="Medium"/>
