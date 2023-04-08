@@ -19,10 +19,6 @@ public partial class ViewModel : ObservableObject
     [ObservableProperty]
     double bal;
 
-    public void CreateAccount()
-    {
-        
-    }
     public void FindAccount(string username)
     {
         Account u = accounts.FirstOrDefault(x => x.Username == username);

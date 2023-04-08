@@ -20,7 +20,7 @@ public partial class MainPage : ContentPage
         string username = UsernameEntry.Text;
         string pass = PasswordEntry.Text;
 
-        if (username == Username && pass == Password)
+        if (username == USERNAME && pass == PASSWORD)
         {
             Navigation.PushAsync(new AccountPage());
         }
@@ -49,8 +49,7 @@ public partial class MainPage : ContentPage
 
         string newPassword = random.Next(1000, 10000).ToString();
 
-     
-        PasswordEntry.Text = Password;
+        Account u = new Account(newUsername, newPassword, "", "", 0);
         DisplayAlert("Password Created", $"Your new username is: {USERNAME}. Your new password is: {PASSWORD}.", "OK");
     }
 }
