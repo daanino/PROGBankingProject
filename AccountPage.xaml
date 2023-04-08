@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PROGBankingProject.AccountPage"
+             Title="AccountPage">
+    <VerticalStackLayout>
+        <Label
+            Text="{Binding FirstName}"
+            />
+        <Label 
+            Text="{Binding Balance}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button x:Name="DepositBtn"
+                Text ="Deposit Money"
+                Clicked="DepositBtnClicked"/>
+        <Button x:Name="WithdrawBtn"
+                Text ="Withdraw Money"
+                Clicked="WithdrawBtnClicked"/>
+        <Button x:Name="TransferBtn"
+                Text ="Transfer Money to another account"
+                Clicked="TransferBtnClicked"/>
+        <Button x:Name="LogoutBtn"
+                Text ="Logout"
+                Clicked="LogoutBtnClicked"/>
+    </VerticalStackLayout>
+</ContentPage> 

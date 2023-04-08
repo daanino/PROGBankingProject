@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PROGBankingProject.MainPage">
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="FillAndExpand" 
+                 BackgroundColor="#E5E5E5" 
+                 Padding="20">
+
+            <Label Text="Welcome to MAZE BANK" 
+               FontSize="Large" 
+               TextColor="#005c99"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" 
+               Margin="0,0,0,40"/>
+
+            <StackLayout BackgroundColor="White" 
+                     Padding="30,20" 
+                     Spacing="20">
+
+                <Label Text="Your Details" 
+                   FontSize="Large" 
+                   TextColor="#005c99" 
+                   HorizontalOptions="Center"/>
+
+                <Entry x:Name="FirstNameEntry" 
+                   Placeholder="First Name" 
+                   FontSize="Medium"/>
+
+                <Entry x:Name="LastNameEntry" 
+                   Placeholder="Last Name" 
+                   FontSize="Medium"/>
+
+                <Entry x:Name="UsernameEntry" 
+                   Placeholder="Username" 
+                   FontSize="Medium"/>
+
+                <Entry x:Name="PasswordEntry" 
+                   Placeholder="Password" 
+                   IsPassword="True" 
+                   FontSize="Medium"/>
+
+                <Button x:Name="LoginButton" 
+                    Text="Sign In" 
+                    FontSize="Medium" 
+                    BackgroundColor="#005c99" 
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnLoginClicked"/>
+
+                <Button x:Name="CreatePasswordButton" 
+                    Text="Create Account" 
+                    FontSize="Medium" 
+                    BackgroundColor="#005c99" 
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnCreatePasswordClicked"/>
+
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+
+</ContentPage>
