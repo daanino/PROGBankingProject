@@ -53,7 +53,7 @@ public partial class MainPage : ContentPage
         string newPassword = random.Next(1000, 10000).ToString();
 
      
-        PasswordEntry.Text = Password;
+        PasswordEntry.Text = newPassword;
         DisplayAlert("Password Created", $"Your new username is: {USERNAME}. Your new password is: {PASSWORD}.", "OK");
     }
 }
