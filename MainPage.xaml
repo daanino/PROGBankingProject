@@ -41,6 +41,27 @@
                     CornerRadius="10"
                     Clicked="OnLoginClicked"/>
 
+                
+
+            </StackLayout>
+
+            <StackLayout
+                BackgroundColor="White"
+                Padding="30,20" 
+                Spacing="20">
+                <Entry x:Name="NewUsernameEntry" 
+                   Placeholder="New Username" 
+                   FontSize="Medium"/>
+                <Entry x:Name="NewPasswordEntry" 
+                   Placeholder="New Password" 
+                   IsPassword="True" 
+                   FontSize="Medium"/>
+                <Entry x:Name="NewFirstNameEntry" 
+                   Placeholder="Your first name"  
+                   FontSize="Medium"/>
+                <Entry x:Name="NewLastNameEntry" 
+                   Placeholder="Your last name" 
+                   FontSize="Medium"/>
                 <Button x:Name="CreatePasswordButton" 
                     Text="Create Account" 
                     FontSize="Medium" 
@@ -48,7 +69,6 @@
                     TextColor="White"
                     CornerRadius="10"
                     Clicked="OnCreatePasswordClicked"/>
-
             </StackLayout>
 
         </StackLayout>

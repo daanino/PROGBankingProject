@@ -44,17 +44,23 @@ public partial class MainPage : ContentPage
 
     private void OnCreatePasswordClicked(object sender, EventArgs e)
     {
-        Random random = new Random();
-        string newUsername = "";
-        for (int i = 0; i < 5; i++)
+        string newUsername = NewUsernameEntry.Text;
+        string newPassword = NewPasswordEntry.Text;
+        string newFirstName = NewFirstNameEntry.Text;
+        string newLastName = NewLastNameEntry.Text;
+
+        Account newAccount = new Account
         {
-            newUsername += (char)random.Next('a', 'z' + 1);
-        }
+            Username = newUsername,
+            Password = newPassword,
+            FirstName = newFirstName,
+            LastName = newLastName,
+            Balance = 0
+        };
 
-        string newPassword = random.Next(1000, 10000).ToString();
+        vm.Accounts.Add(newAccount);
 
-     
-        PasswordEntry.Text = newPassword;
-        DisplayAlert("Password Created", $"Your new username is: {USERNAME}. Your new password is: {PASSWORD}.", "OK");
+
+        DisplayAlert("Account Created", $"Your new username is: {newUsername}. Your new password is: {newPassword}.", "OK");
     }
 }

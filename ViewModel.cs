@@ -13,8 +13,11 @@ public class ViewModel
     public string lastName { get; set; }
     public decimal balance { get; set; }
     public Account LoggedInAccount { get; private set; }
-
     public Account FoundAccount { get; private set; }
+    public ViewModel()
+    {
+        Accounts = new List<Account>();
+    }
 
     public void LoginAccount(string username, string password)
     {

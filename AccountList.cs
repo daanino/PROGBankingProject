@@ -24,8 +24,8 @@ public class AccountRepository
     {
         List<Account> accounts = new List<Account>()
         {
-            new Account(){ Username = "daniel0102", Password = "password123", FirstName = "Daniel", LastName = "Bautista", Balance = 1.20M},
-            new Account(){ Username = "musa123", Password = "SecurePassword!", FirstName = "Musa", LastName = "Khawaja", Balance = 5509305.30M},
+            new Account(){ Username = "daniel0102", Password = "00000", FirstName = "Daniel", LastName = "Bautista", Balance = 1.20M},
+            new Account(){ Username = "musa123", Password = "12345", FirstName = "Musa", LastName = "Khawaja", Balance = 5509305.30M},
         };
         return accounts;
     }
