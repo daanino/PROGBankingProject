@@ -7,9 +7,9 @@ public partial class WithdrawPage : ContentPage
 	{
 		InitializeComponent();
 	}
-    private void DepositBtnClicked(object sender, EventArgs e)
+    private void WithdrawBtnClicked(object sender, EventArgs e)
     {
-        if (double.TryParse(WithdrawEntry.Text, out double withdrawAmt))
+        if (decimal.TryParse(WithdrawEntry.Text, out decimal withdrawAmt))
         {
             Account selectedAccount = (Account)BindingContext;
             if (selectedAccount.Balance - withdrawAmt < 0)

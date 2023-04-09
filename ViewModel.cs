@@ -1,38 +1,42 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public partial class ViewModel : ObservableObject
+public class ViewModel
 {
-    public ObservableCollection<Account> Accounts { get; set; } = new ObservableCollection<Account>(AccountRepository.GetAccounts());
+    public List<Account> Accounts { get; set; }
+    public int attempts { get; set; } = 3;
+    public string firstName { get; set; }
+    public string lastName { get; set; }
+    public decimal balance { get; set; }
+    public Account LoggedInAccount { get; private set; }
 
-    [ObservableProperty]
-    string firstName;
-    [ObservableProperty]
-    string lastName;
-    [ObservableProperty]
-    double balance;
+    public Account FoundAccount { get; private set; }
 
-    public void LoginAccount(string username, string pass)
+    public void LoginAccount(string username, string password)
     {
-        Account u = Accounts.FirstOrDefault(x => x.Username == username && x.Password == pass);
-
-        firstName = u.FirstName;
-        lastName = u.LastName;
-        balance = u.Balance;
+        LoggedInAccount = Accounts.FirstOrDefault(x => x.Username == username && x.Password == password);
+        if (LoggedInAccount != null)
+        {
+            firstName = LoggedInAccount.FirstName;
+            lastName = LoggedInAccount.LastName;
+            balance = LoggedInAccount.Balance;
+        }
     }
 
     public void FindAccount(string username)
     {
-        Account u = Accounts.FirstOrDefault(x =>x.Username == username);
+        FoundAccount = Accounts.FirstOrDefault(x =>x.Username == username);
 
-        firstName = u.FirstName;
-        lastName = u.LastName;
-        balance = u.Balance;
+        if (FoundAccount != null)
+        {
+            firstName = FoundAccount.FirstName;
+            lastName = FoundAccount.LastName;
+            balance = FoundAccount.Balance;
+        }
     }
 
 }

@@ -13,7 +13,7 @@
             FontSize="Medium"/>
         <Button x:Name="ConfirmWithdrawBtn"
                 Text="Confirm Withdraw"
-                Clicked="OnDepositConfirmed"/>
+                Clicked="WithdrawBtnClicked"/>
         <Button x:Name="WBacktoAccountPage"
                 Text="Return to Account Menu"
                 Clicked="ReturnBtnClicked"/>

@@ -15,10 +15,10 @@ public partial class TransferPage : ContentPage
     private void OnTransferConfirmed(object sender, EventArgs e)
     {
         string username = TransferEntry.Text;
-        Account account = vm.FindAccount(username);
-        if (account != null)
+        vm.FindAccount(username);
+        if (vm.FoundAccount != null)
         {
-            string message = $"Account found for {account.FirstName} {account.LastName}. Current balance: {account.Balance:C}";
+            string message = $"Account found for {vm.FoundAccount.FirstName} {vm.FoundAccount.LastName}. Current balance: {vm.LoggedInAccount.Balance:C}";
             DisplayAlert("Account Found", message, "OK");
         }
         else

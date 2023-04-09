@@ -13,7 +13,7 @@
             FontSize="Medium"/>
         <Button x:Name="ConfirmDepositBtn"
                 Text="Confirm Deposit"
-                Clicked="OnDepositConfirmed"/>
+                Clicked="DepositBtnClicked"/>
         <Button x:Name="DBacktoAccountPage"
                 Text="Return to Account Menu"
                 Clicked="ReturnBtnClicked"/>

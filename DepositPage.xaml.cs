@@ -8,7 +8,7 @@ public partial class DepositPage : ContentPage
 	}
     private void DepositBtnClicked(object sender, EventArgs e)
     {
-        if (double.TryParse(DepositEntry.Text, out double depositAmt))
+        if (decimal.TryParse(DepositEntry.Text, out decimal depositAmt))
         {
             Account selectedAccount = (Account)BindingContext;
             selectedAccount.Balance += depositAmt;

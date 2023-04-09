@@ -21,18 +21,19 @@ public partial class MainPage : ContentPage
     private void OnLoginClicked(object sender, EventArgs e)
     {
         string username = UsernameEntry.Text;
-        string pass = PasswordEntry.Text;
-        Account account = vm.LoginAccount(username, pass);
-        if (account != null)
+        string password = PasswordEntry.Text;
+        vm.LoginAccount(username, password);
+
+        if (vm.LoggedInAccount != null)
         {
             Navigation.PushAsync(new AccountPage());
         }
         else
         {
-            attempts--;
-            if (attempts > 0)
+            vm.attempts--;
+            if (vm.attempts > 0)
             {
-                DisplayAlert("Invalid Login", $"You have {attempts} attempts left.", "OK");
+                DisplayAlert("Invalid Login", $"You have {vm.attempts} attempts left.", "OK");
             }
             else
             {
