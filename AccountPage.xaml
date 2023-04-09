@@ -5,10 +5,11 @@
              Title="AccountPage">
     <VerticalStackLayout>
         <Label
-            Text="{Binding FirstName}"
+            Text="{Binding FirstName, StringFormat='Hello, {0}'}"
+            FontSize="Large" 
             />
         <Label 
-            Text="{Binding Balance}"
+            Text="{Binding Balance, StringFormat='Your balance: {0:C}'}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Button x:Name="DepositBtn"

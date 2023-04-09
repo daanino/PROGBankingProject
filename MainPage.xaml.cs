@@ -26,7 +26,9 @@ public partial class MainPage : ContentPage
 
         if (vm.LoggedInAccount != null)
         {
-            Navigation.PushAsync(new AccountPage());
+            var accountPage = new AccountPage();
+            accountPage.BindingContext = vm.LoggedInAccount;
+            Navigation.PushAsync(accountPage);
         }
         else
         {
