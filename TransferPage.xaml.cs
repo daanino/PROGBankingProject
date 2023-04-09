@@ -26,7 +26,7 @@ public partial class TransferPage : ContentPage
             DisplayAlert("Account Not Found", $"No account found for username {username}.", "OK");
         }
     }
-    private void BacktoAccountPage(object sender, EventArgs e)
+    private void ReturnBtnClicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new AccountPage());
     }

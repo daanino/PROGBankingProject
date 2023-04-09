@@ -14,7 +14,7 @@
         <Button x:Name="ConfirmDepositBtn"
                 Text="Confirm Deposit"
                 Clicked="OnDepositConfirmed"/>
-        <Button x:Name="BacktoAccountPage"
+        <Button x:Name="DBacktoAccountPage"
                 Text="Return to Account Menu"
                 Clicked="ReturnBtnClicked"/>
     </VerticalStackLayout>

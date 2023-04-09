@@ -19,7 +19,7 @@ public partial class DepositPage : ContentPage
             DisplayAlert("Error","An error occurred.", "OK");
         }
     }
-    private void BacktoAccountPage(object sender, EventArgs e)
+    private void ReturnBtnClicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new AccountPage());
     }

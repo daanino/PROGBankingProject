@@ -22,8 +22,8 @@ public partial class MainPage : ContentPage
     {
         string username = UsernameEntry.Text;
         string pass = PasswordEntry.Text;
-        vm.LoginAccount(username, pass);
-        if (username == Username && pass == Password)
+        Account account = vm.LoginAccount(username, pass);
+        if (account != null)
         {
             Navigation.PushAsync(new AccountPage());
         }
