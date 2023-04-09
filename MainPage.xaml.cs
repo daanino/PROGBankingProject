@@ -9,17 +9,20 @@ public partial class MainPage : ContentPage
     private int attempts = 3;
     private string USERNAME = "username";
     private string PASSWORD = "password";
+    public ViewModel vm;
 
     public MainPage()
     {
         InitializeComponent();
+
+        vm = new ViewModel();
     }
 
     private void OnLoginClicked(object sender, EventArgs e)
     {
         string username = UsernameEntry.Text;
         string pass = PasswordEntry.Text;
-
+        vm.LoginAccount(username, pass);
         if (username == Username && pass == Password)
         {
             Navigation.PushAsync(new AccountPage());

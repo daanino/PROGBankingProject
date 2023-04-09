@@ -8,20 +8,31 @@ using System.Threading.Tasks;
 
 public partial class ViewModel : ObservableObject
 {
-    public ObservableCollection<Account> Accountlist { get; set; } = new ObservableCollection<Account>(AccountRepository.GetAccounts());
+    public ObservableCollection<Account> Accounts { get; set; } = new ObservableCollection<Account>(AccountRepository.GetAccounts());
 
-    [ObservableProperty]
-    string pass;
     [ObservableProperty]
     string firstName;
     [ObservableProperty]
     string lastName;
     [ObservableProperty]
-    double bal;
+    double balance;
+
+    public void LoginAccount(string username, string pass)
+    {
+        Account u = Accounts.FirstOrDefault(x => x.Username == username && x.Password == pass);
+
+        firstName = u.FirstName;
+        lastName = u.LastName;
+        balance = u.Balance;
+    }
 
     public void FindAccount(string username)
     {
-        Account u = accounts.FirstOrDefault(x => x.Username == username);
+        Account u = Accounts.FirstOrDefault(x =>x.Username == username);
+
+        firstName = u.FirstName;
+        lastName = u.LastName;
+        balance = u.Balance;
     }
 
 }

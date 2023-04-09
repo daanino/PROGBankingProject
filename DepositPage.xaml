@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PROGBankingProject.DepositPage"
+             Title="DepositPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Please input the amount of dollars you would like to deposit."
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Entry x:Name="DepositEntry"
+            Placeholder="Deposit ($)"
+            FontSize="Medium"/>
+        <Button x:Name="ConfirmDepositBtn"
+                Text="Confirm Deposit"
+                Clicked="OnDepositConfirmed"/>
+        <Button x:Name="BacktoAccountPage"
+                Text="Return to Account Menu"
+                Clicked="ReturnBtnClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
