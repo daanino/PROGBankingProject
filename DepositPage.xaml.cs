@@ -2,18 +2,19 @@ namespace PROGBankingProject;
 
 public partial class DepositPage : ContentPage
 {
-	public DepositPage(Account account)
+    AccountRepository _accountRepository;
+    public DepositPage(Account account)
 	{
 		InitializeComponent();
-
         BindingContext = account;
-	}
+    }
     private void DepositBtnClicked(object sender, EventArgs e)
     {
         if (decimal.TryParse(DepositEntry.Text, out decimal depositAmt))
         {
             Account selectedAccount = (Account)BindingContext;
             selectedAccount.Balance += depositAmt;
+            DisplayAlert("Success",$"Your balance is now {selectedAccount.Balance}", "OK");
         }
         else
         {
@@ -23,6 +24,6 @@ public partial class DepositPage : ContentPage
     }
     private void ReturnBtnClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new AccountPage());
+        Navigation.PushAsync(new AccountPage((Account)BindingContext));
     }
 }

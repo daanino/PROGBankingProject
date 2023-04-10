@@ -1,4 +1,6 @@
 
+using System.Security.Principal;
+
 namespace PROGBankingProject;
 
 public partial class TransferPage : ContentPage
@@ -6,11 +8,12 @@ public partial class TransferPage : ContentPage
 
     public ViewModel vm;
 
-	public TransferPage()
+	public TransferPage(Account account)
 	{
 		InitializeComponent();
         vm = new ViewModel();
-   	}
+        BindingContext = account;
+    }
 
     private void OnTransferConfirmed(object sender, EventArgs e)
     {
@@ -28,6 +31,6 @@ public partial class TransferPage : ContentPage
     }
     private void ReturnBtnClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new AccountPage());
+        Navigation.PushAsync(new AccountPage((Account)BindingContext));
     }
 }

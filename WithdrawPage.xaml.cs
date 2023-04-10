@@ -3,9 +3,11 @@ namespace PROGBankingProject;
 
 public partial class WithdrawPage : ContentPage
 {
-	public WithdrawPage()
+    AccountRepository _accountRepository;
+    public WithdrawPage(Account account)
 	{
 		InitializeComponent();
+        BindingContext = account;
 	}
     private void WithdrawBtnClicked(object sender, EventArgs e)
     {
@@ -20,6 +22,7 @@ public partial class WithdrawPage : ContentPage
             else
             {
                 selectedAccount.Balance -= withdrawAmt;
+                DisplayAlert("Success", $"Your balance is now {selectedAccount.Balance}", "OK");
             }
         }
         else
@@ -30,6 +33,6 @@ public partial class WithdrawPage : ContentPage
     }
     private void ReturnBtnClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new AccountPage());
+        Navigation.PushAsync(new AccountPage((Account)BindingContext));
     }
 }

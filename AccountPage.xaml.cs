@@ -4,21 +4,23 @@ namespace PROGBankingProject;
 
 public partial class AccountPage : ContentPage
 {
-	public AccountPage()
+	public AccountPage(Account account)
 	{
 		InitializeComponent();
-	}
-	private void DepositBtnClicked(object sender, EventArgs e)
+        BindingContext = account;
+    }
+
+    private void DepositBtnClicked(object sender, EventArgs e)
 	{
-        Navigation.PushAsync(new DepositPage(accounts) { BindingContext = selectedAccount });
+        Navigation.PushAsync(new DepositPage((Account)BindingContext));
     }
     private void WithdrawBtnClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new WithdrawPage());
+        Navigation.PushAsync(new WithdrawPage((Account)BindingContext));
     }
     private void TransferBtnClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new TransferPage());
+        Navigation.PushAsync(new TransferPage((Account)BindingContext));
     }
     private void LogoutBtnClicked(object sender, EventArgs e)
     {

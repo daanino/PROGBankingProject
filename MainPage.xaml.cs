@@ -7,8 +7,6 @@ namespace PROGBankingProject;
 public partial class MainPage : ContentPage
 {
     private int attempts = 3;
-    private string USERNAME = "username";
-    private string PASSWORD = "password";
     public ViewModel vm;
 
     public MainPage()
@@ -26,8 +24,7 @@ public partial class MainPage : ContentPage
 
         if (vm.LoggedInAccount != null)
         {
-            var accountPage = new AccountPage();
-            accountPage.BindingContext = vm.LoggedInAccount;
+            var accountPage = new AccountPage(vm.LoggedInAccount);
             Navigation.PushAsync(accountPage);
         }
         else
