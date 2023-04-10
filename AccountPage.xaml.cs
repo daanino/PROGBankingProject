@@ -4,6 +4,7 @@ namespace PROGBankingProject;
 
 public partial class AccountPage : ContentPage
 {
+    // By Musa Khawaja
 	public AccountPage(Account account)
 	{
 		InitializeComponent();

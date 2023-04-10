@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 public class ViewModel
 {
+    // By Daniel Bautista
 
     public List<Account> Accounts { get; set; }
     public int attempts { get; set; } = 3;
@@ -20,7 +21,7 @@ public class ViewModel
         Accounts = new AccountRepository().GetAccounts();
     }
 
-    public void LoginAccount(string username, string password)
+    public void LoginAccount(string username, string password) // Function used for login in main page
     {
         LoggedInAccount = Accounts.FirstOrDefault(x => x.Username == username && x.Password == password);
         if (LoggedInAccount != null)
@@ -31,7 +32,7 @@ public class ViewModel
         }
     }
 
-    public void FindAccount(string username)
+    public void FindAccount(string username) // Function used for finding valid account for transfer
     {
         FoundAccount = Accounts.FirstOrDefault(x =>x.Username == username);
 

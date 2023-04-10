@@ -5,6 +5,7 @@ namespace PROGBankingProject;
 
 public partial class TransferPage : ContentPage
 {
+    // By Daniel Bautista
 
     public ViewModel vm;
 
@@ -31,6 +32,7 @@ public partial class TransferPage : ContentPage
                 }
                 else
                 {
+                    // Successful transfer
                     selectedAccount.Balance -= transferAmt;
                     vm.FoundAccount.Balance += transferAmt;
                     DisplayAlert("Transfer Successful", $"Account found for {vm.FoundAccount.FirstName} {vm.FoundAccount.LastName}. Transfer successful. Current balance: {selectedAccount.Balance:C}", "OK");
@@ -38,11 +40,13 @@ public partial class TransferPage : ContentPage
             }
             else
             {
+                // User inputs an invalid datatype
                 DisplayAlert("Error", "An error occured.", "OK");
             }
         }
         else
         {
+            // Account could not be found
             DisplayAlert("Error", $"There was no account found for username {username}.", "OK");
         }
     }

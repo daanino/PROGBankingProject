@@ -1,4 +1,5 @@
-﻿public class Account
+﻿// By Musa Khawaja and Daniel Bautista
+public class Account
 {
     public string Username { get; set; }
     public string Password { get; set; }

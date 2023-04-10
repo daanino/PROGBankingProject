@@ -2,6 +2,7 @@ namespace PROGBankingProject;
 
 public partial class DepositPage : ContentPage
 {
+    // By Daniel Bautista
     AccountRepository _accountRepository;
     public DepositPage(Account account)
 	{
@@ -18,7 +19,7 @@ public partial class DepositPage : ContentPage
         }
         else
         {
-            // Handle the case where the text cannot be parsed as a double.
+            // Handle the case where the text cannot be parsed as a decimal.
             DisplayAlert("Error","An error occurred.", "OK");
         }
     }

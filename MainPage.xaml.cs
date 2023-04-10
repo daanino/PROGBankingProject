@@ -6,6 +6,7 @@ using Microsoft.Maui.Controls;
 namespace PROGBankingProject;
 public partial class MainPage : ContentPage
 {
+    // By Musa Khawaja
     private int attempts = 3;
     public ViewModel vm;
 
@@ -57,7 +58,7 @@ public partial class MainPage : ContentPage
             Balance = 0
         };
 
-        vm.Accounts.Add(newAccount);
+        vm.Accounts.Add(newAccount); // Creates new account using credentials provided by the entries above
 
 
         DisplayAlert("Account Created", $"Your new username is: {newUsername}. Your new password is: {newPassword}.", "OK");

@@ -3,6 +3,7 @@ namespace PROGBankingProject;
 
 public partial class WithdrawPage : ContentPage
 {
+    // By Daniel Bautista
     AccountRepository _accountRepository;
     public WithdrawPage(Account account)
 	{
@@ -21,6 +22,7 @@ public partial class WithdrawPage : ContentPage
             }
             else
             {
+                // Successful withdraw
                 selectedAccount.Balance -= withdrawAmt;
                 DisplayAlert("Success", $"Your balance is now {selectedAccount.Balance}", "OK");
             }
