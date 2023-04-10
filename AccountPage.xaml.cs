@@ -10,8 +10,8 @@ public partial class AccountPage : ContentPage
 	}
 	private void DepositBtnClicked(object sender, EventArgs e)
 	{
-        Navigation.PushAsync(new DepositPage());
-	}
+        Navigation.PushAsync(new DepositPage(accounts) { BindingContext = selectedAccount });
+    }
     private void WithdrawBtnClicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new WithdrawPage());

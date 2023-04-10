@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 public class ViewModel
 {
+
     public List<Account> Accounts { get; set; }
     public int attempts { get; set; } = 3;
     public string firstName { get; set; }
@@ -16,7 +17,7 @@ public class ViewModel
     public Account FoundAccount { get; private set; }
     public ViewModel()
     {
-        Accounts = new List<Account>();
+        Accounts = new AccountRepository().GetAccounts();
     }
 
     public void LoginAccount(string username, string password)

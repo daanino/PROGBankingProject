@@ -29,4 +29,14 @@ public class AccountRepository
         };
         return accounts;
     }
+    public void UpdateAccount(Account account)
+    {
+        Account existingAccount = accounts.FirstOrDefault(a => a.Username == account.Username);
+
+        if (existingAccount != null)
+        {
+            existingAccount.Balance = account.Balance;
+        }
+    }
+
 }

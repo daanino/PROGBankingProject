@@ -2,9 +2,11 @@ namespace PROGBankingProject;
 
 public partial class DepositPage : ContentPage
 {
-	public DepositPage()
+	public DepositPage(Account account)
 	{
 		InitializeComponent();
+
+        BindingContext = account;
 	}
     private void DepositBtnClicked(object sender, EventArgs e)
     {
